@@ -8,10 +8,19 @@ body {
 }
 
 nav {
+  position: top;
+  width: 100%;
   height: 70px;
   display: flex;
   padding: 20px 36px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .gray {
@@ -33,6 +42,8 @@ section {
 .hero {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  align-self: center;
 }
 
 .hero--photo {
@@ -50,7 +61,14 @@ section {
 
 .card {
   width: 175px;
+  min-width: 175px;
   font-size: 12px;
+  height: fit-content;
+  margin: 0 15px 10px 15px;
+}
+
+.card--description{
+  font-size: 11px;
 }
 
 .card--image {
@@ -63,17 +81,56 @@ section {
   align-items: center;
 }
 
+
 .card--stats--star {
   height: 14px;
+  margin-right: 3px;
+  vertical-align: -2px;
+}
+
+.card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
 
 .cards{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: row;
+  min-width: none;
+  height: 600px;
+  overflow-x: scroll;
+  width: 500px;
+  align-items: end;
 }
 
-.cards .card {
-  margin-left: 20px;
+.cards, .cards .card{
+  transform: rotateX(180deg);
+}
+
+/* Designing for scroll-bar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gainsboro;
+  border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 90, 95);
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

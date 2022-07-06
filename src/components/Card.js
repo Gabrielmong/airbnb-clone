@@ -7,26 +7,38 @@ function importAll(r) {
   });
   return images;
 }
+
+function badgeTextFunc(person) {
+  let badgeText;
+  if (person.openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (person.location === "Online") {
+    badgeText = "ONLINE";
+  }
+  return badgeText;
+}
 const images = importAll(
   require.context("../images", false, /\.(png|jpe?g|svg)$/)
 );
 
 export default function Card({ person }) {
+  let badgeText = badgeTextFunc(person);
   return (
     <div className="card">
-      <p>Name:{person.name}</p>
-      <img src={images[person.image]} className="card--image" />
+      {badgeText && <div className="card--badge">{badgeText}</div>}
+      <img src={images[person.coverImg]} className="card--image" alt="" />
+      <p className="bold">{person.title}</p>
       <div className="card--stats">
         <img
           src={images["star.png"]}
           className="card--stats--star"
           alt="star"
         />
-        <span>{person.rating}</span>
-        <span className="gray">(6) • </span>
-        <span className="gray">{person.country}</span>
+        <span>{person.stats.rating}</span>
+        <span className="gray">({person.stats.reviewCount}) • </span>
+        <span className="gray">{person.location}</span>
       </div>
-      <p>{person.desc}</p>
+      <p className="card--description">{person.description}</p>
       <p>
         <span className="bold">From ${person.price}</span> / person
       </p>
