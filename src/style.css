@@ -161,12 +161,12 @@ section {
     max-width: 100%;
   }
   .cards {
-    width: 85%;
+    min-width: 85%;
     height: fit-content;
   }
 
   .card {
-    min-width: 40vw;
+    min-width: 45vw;
     font-size: 3vw;
   }
 
