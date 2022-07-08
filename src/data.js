@@ -57,7 +57,7 @@ export default [
     openSpots: 2,
   },
   {
-    id: 4,
+    id: 5,
     title: "Programming with Carlos herrera",
     description:
       "He just knows a lot",
@@ -71,7 +71,7 @@ export default [
     openSpots: 0,
   },
   {
-    id: 4,
+    id: 6,
     title: "Edwin",
     description:
       "Hes likes anime girls and furries, not much depth to edwin's interests.",
@@ -81,7 +81,7 @@ export default [
       rating: 1,
       reviewCount: 50,
     },
-    location: "Online",
+    location: "Costa Rica",
     openSpots: 50,
   },
 ];
